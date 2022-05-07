@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+    <RelativeLayout
+    android:background="@color/colorBackground"
+    android:layoutDirection="rtl"
+    tools:context=".activity.HomeActivity"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout
+        android:background="@color/colorPrimary"
+        android:layout_height="?actionBarSize"
+        android:layout_width="match_parent"
+        android:padding="8dp"
+        android:id="@+id/toolbar">
+
+    <ImageView
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:id="@+id/img_shopping"
+        android:layout_centerVertical="true"
+        android:layout_alignParentLeft="true"
+        app:srcCompat="@drawable/ic_baseline_shopping_cart_24"/>
+
+    <TextView
+        android:background="@drawable/bg_txt_count"
+        android:layout_height="20dp"
+        android:layout_width="20dp"
+        android:id="@+id/txt_count"
+        android:layout_marginTop="2dp"
+        android:layout_marginLeft="-12dp"
+        android:visibility="gone"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:text="0"
+        android:layout_toRightOf="@id/img_shopping"
+        android:textColor="@color/colorPrimary"
+        android:textSize="10sp"/>
+
+</RelativeLayout>
+
+    <FrameLayout
+        android:id="@+id/frameLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/bottom_navigation"
+        android:layout_below="@id/toolbar" />
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:background="@color/colorPrimary"
+        android:layout_height="?actionBarSize"
+        android:layout_width="match_parent"
+        android:id="@+id/bottom_navigation"
+        app:itemIconTint="@drawable/bg_nav_selected"
+        app:itemTextColor="@drawable/bg_nav_selected"
+        app:menu="@menu/home_menu"
+        android:layout_alignParentBottom="true"/>
+
+</RelativeLayout>
