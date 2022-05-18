@@ -61,7 +61,6 @@ public class HomeFragment extends Fragment {
         requestQueue = Volley.newRequestQueue(getContext());
         getBannerSlider();
         getCategory();
-        showCategories();
         return view;
     }
 
@@ -78,7 +77,7 @@ public class HomeFragment extends Fragment {
                 for (int i = 0 ; i<categories.length ; i++){
 
                     listCategory.add(categories[i]);
-                    categoryAdapter.notifyDataSetChanged();
+//                    categoryAdapter.notifyDataSetChanged();
                     Log.e("CHeck"," : "+ categories[i]);
 
                 }
@@ -106,11 +105,7 @@ public class HomeFragment extends Fragment {
         recyclerviewCategory = view.findViewById(R.id.recyclerView_Category);
         recyclerviewCategory.setHasFixedSize(true);
         recyclerviewCategory.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false));
-        ArrayList<Category> listCategory2 = new ArrayList<>();
-        listCategory2.add(new Category("357","HI","https://google.com"));
-        listCategory2.add(new Category("357","HI","https://google.com"));
-        listCategory2.add(new Category("357","HI","https://google.com"));
-        categoryAdapter = new CategoryAdapter(getContext(), listCategory2);
+        categoryAdapter = new CategoryAdapter(getContext(), listCategory);
         recyclerviewCategory.setAdapter(categoryAdapter);
     }
     private void getBannerSlider() {
