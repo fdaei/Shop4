@@ -35,24 +35,24 @@ import java.util.TimerTask;
 
 import com.example.shop4.Global.Link;
 import com.example.shop4.R;
-import com.example.shop4.activity.AllProductActivity;
+//import com.example.shop4.activity.AllProductActivity;
 import com.example.shop4.adapter.AmazingProductAdapter;
 import com.example.shop4.adapter.BannerSecondAdapter;
-import com.example.shop4.adapter.BrandAdapter;
+//import com.example.shop4.adapter.BrandAdapter;
 import com.example.shop4.adapter.CategoryAdapter;
 import com.example.shop4.adapter.NewProductAdapter;
 import com.example.shop4.adapter.SliderAdapter;
-import com.example.shop4.adapter.WatchProductAdapter;
-import com.example.shop4.api.ApiClient;
-import com.example.shop4.api.ApiInterface;
+//import com.example.shop4.adapter.WatchProductAdapter;
+//import com.example.shop4.api.ApiClient;
+//import com.example.shop4.api.ApiInterface;
 import com.example.shop4.model.Amazing;
 import com.example.shop4.model.AmazingOfferProduct;
 import com.example.shop4.model.Banner;
-import com.example.shop4.model.Brand;
+//import com.example.shop4.model.Brand;
 import com.example.shop4.model.Category;
 import com.example.shop4.model.FirstAmazing;
 import com.example.shop4.model.Product;
-import com.example.shop4.model.TimerAmazing;
+//import com.example.shop4.model.TimerAmazing;
 import retrofit2.Call;
 import retrofit2.Callback;
 
@@ -120,8 +120,8 @@ public class HomeFragment extends Fragment {
 
         requestQueue = Volley.newRequestQueue(getContext());
 
-        request = ApiClient.getApiClient().create(ApiInterface.class);
-        timer = new Timer();
+//        request = ApiClient.getApiClient().create(ApiInterface.class);
+//        timer = new Timer();
 
         getBannerSlider();
         getCategory();
@@ -132,16 +132,16 @@ public class HomeFragment extends Fragment {
 //        getNewWatch();
 //        getTimer();
 
-        txt_new_product_more = view.findViewById(R.id.txt_new_product_more);
-        txt_new_product_more.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-                Intent intent = new Intent(getContext() , AllProductActivity.class);
-                startActivity(intent);
-
-            }
-        });
+//        txt_new_product_more = view.findViewById(R.id.txt_new_product_more);
+//        txt_new_product_more.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//
+//                Intent intent = new Intent(getContext() , AllProductActivity.class);
+//                startActivity(intent);
+//
+//            }
+//        });
 
 
         return view;
@@ -502,11 +502,11 @@ public class HomeFragment extends Fragment {
 //    }
 
     private void getSecondBanner() {
-        recyclerViewSecondBanner = view.findViewById(R.id.recyclerView_banner_second);
-        recyclerViewSecondBanner.setLayoutManager(new GridLayoutManager(getContext() , 2));
-        recyclerViewSecondBanner.setHasFixedSize(true);
-        bannerSecondAdapter = new BannerSecondAdapter(getContext() , listBanner_second);
-        recyclerViewSecondBanner.setAdapter(bannerSecondAdapter);
+//        recyclerViewSecondBanner = view.findViewById(R.id.recyclerView_banner_second);
+//        recyclerViewSecondBanner.setLayoutManager(new GridLayoutManager(getContext() , 2));
+//        recyclerViewSecondBanner.setHasFixedSize(true);
+//        bannerSecondAdapter = new BannerSecondAdapter(getContext() , listBanner_second);
+//        recyclerViewSecondBanner.setAdapter(bannerSecondAdapter);
 
         String url = Link.LINK_SECOND_BANNER;
 
@@ -519,8 +519,8 @@ public class HomeFragment extends Fragment {
 
                 for (int i = 0 ; i<banners.length ; i++){
 
-                    listBanner_second.add(banners[i]);
-                    bannerSecondAdapter.notifyDataSetChanged();
+//                    listBanner_second.add(banners[i]);
+//                    bannerSecondAdapter.notifyDataSetChanged();
 
                 }
 
@@ -643,6 +643,7 @@ public class HomeFragment extends Fragment {
         viewPager = view.findViewById(R.id.viewPager);
         tabs = view.findViewById(R.id.tabs);
         sliderAdapter = new SliderAdapter(getContext() , listBanner);
+
         viewPager.setAdapter(sliderAdapter);
         tabs.setupWithViewPager(viewPager , true);
 
@@ -758,14 +759,14 @@ public class HomeFragment extends Fragment {
 
     }
 
-    @Override
-    public void onDestroy() {
-
-        if (timer != null){
-            timer.cancel();
-            timer.purge();
-        }
-
-        super.onDestroy();
-    }
+//    @Override
+//    public void onDestroy() {
+//
+//        if (timer != null){
+//            timer.cancel();
+//            timer.purge();
+//        }
+//
+//        super.onDestroy();
+//    }
 }
